@@ -1,0 +1,800 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tema terang (default) */
+:root {
+  --bg: #ffffff;
+  --ink: #111111;
+  --muted: #666666;
+  --gray: #d9d9d9;
+  --gray-soft: #f3f3f3;
+  --surface: #ffffff;
+  --line: #e5e5e5;
+  --text-soft: #444444;
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --grid: rgba(0, 0, 0, 0.07);
+  --testi-bg: rgba(243, 243, 243, 0.75);
+  --ph-ink: #9a9a9a;
+  --star: #fbbc04;
+  --star-off: #cfcfcf;
+  --accent: #111111;
+  --accent-text: #111111;
+  --on-accent: #ffffff;
+}
+
+/* Tema gelap */
+:root[data-theme="dark"] {
+  --bg: #0f172a;
+  --ink: #f8fafc;
+  --muted: #94a3b8;
+  --gray: #334155;
+  --gray-soft: #1e293b;
+  --surface: #1e293b;
+  --line: #334155;
+  --text-soft: #cbd5e1;
+  --nav-bg: rgba(15, 23, 42, 0.85);
+  --grid: rgba(248, 250, 252, 0.06);
+  --testi-bg: rgba(30, 41, 59, 0.5);
+  --ph-ink: #94a3b8;
+  --star-off: #475569;
+  --accent: #6366f1;
+  --accent-text: #818cf8;
+  --on-accent: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 60px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  padding: 18px 0;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+}
+.navbar a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 14px;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s;
+}
+.navbar a:hover,
+.navbar a.active {
+  border-color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  text-align: center;
+  padding: 70px 20px 50px;
+}
+.hero-sub {
+  font-size: 24px;
+  font-weight: 300;
+}
+.hero h1 {
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 8px 0 28px;
+}
+.hero-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---------- Team ---------- */
+.team {
+  padding: 50px 0 60px;
+  text-align: center;
+}
+.team h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.track {
+  position: absolute;
+  inset: 0;
+}
+.card {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -115px;
+  width: 170px;
+  height: 230px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--gray);
+  transform-origin: center center;
+  will-change: transform;
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color 0.2s;
+}
+.card.active {
+  outline-color: var(--ink);
+}
+.card:focus-visible {
+  outline-color: var(--ink);
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.ph {
+  /* placeholder foto */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  font-weight: 500;
+  color: var(--ph-ink);
+  background: var(--gray);
+}
+.hint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Detail anggota ---------- */
+.detail {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  max-width: 940px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+  text-align: left;
+}
+.detail[hidden] {
+  display: none;
+}
+.detail.show {
+  animation: pop 0.35s ease;
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.detail-photo {
+  flex: 0 0 240px;
+  height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--gray);
+}
+.detail-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-info {
+  position: relative;
+  flex: 1;
+  background: var(--gray-soft);
+  border-radius: 10px;
+  padding: 28px 32px;
+}
+.detail-info h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+.detail-role {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.detail-info h4 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 14px 0 6px;
+}
+.detail-info ul {
+  list-style: none;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.detail-info li span {
+  display: inline-block;
+  min-width: 90px;
+  color: var(--muted);
+}
+.detail-info a {
+  color: var(--ink);
+}
+.detail-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  background: none;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+}
+.detail-close:hover {
+  color: var(--ink);
+}
+
+/* ---------- Testimonial ---------- */
+.testi {
+  padding: 60px 20px;
+  background: var(--testi-bg);
+  text-align: center;
+}
+.testi h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+.testi-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 6px 0 26px;
+}
+
+.rating-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.rating-big {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1;
+}
+.rating-summary small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stars {
+  color: var(--star);
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+.stars .off {
+  color: var(--star-off);
+}
+
+.reviews {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  text-align: left;
+}
+.review {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 20px;
+}
+.review-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray);
+  color: var(--text-soft);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.review-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+.review-meta {
+  font-size: 11px;
+  color: var(--muted);
+}
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.review p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--gray);
+  text-align: center;
+  padding: 70px 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .detail {
+    flex-direction: column;
+  }
+  .detail-photo {
+    flex: none;
+    width: 100%;
+    height: 280px;
+  }
+  .carousel {
+    height: 340px;
+  }
+  .navbar {
+    gap: 22px;
+  }
+}
+
+/* ---------- Grid background ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(
+    ellipse at 50% 0%,
+    #000 35%,
+    transparent 90%
+  );
+  mask-image: radial-gradient(ellipse at 50% 0%, #000 35%, transparent 90%);
+}
+.carousel {
+  z-index: 0;
+  isolation: isolate;
+}
+
+/* ---------- Kontrol anggota ---------- */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 940px;
+  margin: 0 auto 8px;
+  padding: 0 20px;
+}
+#counter {
+  font-size: 12px;
+  color: var(--muted);
+  min-width: 44px;
+}
+.ctl {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  transition: 0.2s;
+}
+.ctl:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ---------- Algoritma ---------- */
+.algo {
+  padding: 60px 20px;
+  text-align: center;
+}
+.algo h2 {
+  font-size: 28px;
+  font-weight: 400;
+}
+.algo-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+.algo-wrap {
+  max-width: 980px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 22px;
+}
+.panel h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+@media (max-width: 720px) {
+  .algo-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* carousel dibatasi supaya hanya 6 kartu tanpa duplikat dan pergantian kartu terjadi di luar layar */
+.carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ---------- Algoritma: flowchart + penjelasan ---------- */
+.algo-wrap {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 900px;
+}
+.flow {
+  display: flex;
+  justify-content: center;
+}
+.flow svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  color: var(--ink);
+}
+.flow .shapes * {
+  fill: var(--surface);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.flow .lines path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.flow text {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  fill: var(--ink);
+}
+.flow text.yn {
+  font-size: 11px;
+  fill: var(--muted);
+}
+.about h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.about p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+.chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0;
+}
+.chips span {
+  background: var(--gray-soft);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+}
+.chips i {
+  font-style: normal;
+  color: var(--muted);
+}
+.about .note {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Kontrol anggota (tanpa progress bar) ---------- */
+.controls {
+  justify-content: center;
+}
+
+/* ---------- Warna aksen mengikuti tema ---------- */
+body {
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.navbar a:hover,
+.navbar a.active {
+  border-color: var(--accent);
+}
+.card.active,
+.card:focus-visible {
+  outline-color: var(--accent);
+}
+.ctl {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.ctl:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.detail-info a {
+  color: var(--accent-text);
+}
+.flow svg {
+  color: var(--accent-text);
+}
+.flow .lines path {
+  stroke: var(--accent-text);
+}
+.flow .shapes * {
+  stroke: var(--accent);
+}
+.footer {
+  color: var(--muted);
+}
+:root[data-theme="dark"] .detail-info {
+  border: 1px solid var(--line);
+}
+:root[data-theme="dark"] .review {
+  border: 1px solid var(--line);
+}
+
+/* ---------- Job desk (di dalam panel biodata) ---------- */
+.jobdesk[hidden] {
+  display: none;
+}
+.jobdesk.show {
+  animation: pop 0.35s ease;
+}
+.detail-info .jd-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.detail-info .jd-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 4px 0 16px;
+}
+.detail-info .jd-sub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.detail-info .jd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.detail-info .jd-grid li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+:root[data-theme="dark"] .detail-info .jd-grid li {
+  background: rgba(248, 250, 252, 0.04);
+}
+.tick {
+  flex: 0 0 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  color: var(--accent-text);
+  font-style: normal;
+  font-size: 11px;
+}
+@media (max-width: 720px) {
+  .detail-info .jd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* foto mengikuti tinggi panel */
+@media (min-width: 721px) {
+  .detail-photo {
+    position: relative;
+    height: auto;
+    min-height: 320px;
+  }
+  .detail-photo img,
+  .detail-photo .ph {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+/* ---------- Tombol tema ---------- */
+.theme-toggle {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+@media (max-width: 720px) {
+  .navbar {
+    gap: 14px;
+    padding: 14px 12px;
+  }
+  .navbar a {
+    font-size: 13px;
+  }
+  .theme-toggle {
+    position: static;
+    transform: none;
+    flex-shrink: 0;
+  }
+}
+
+/* ---------- Highlight kursor ---------- */
+:root {
+  --glow: #6366f1;
+  --glow-pct: 16%;
+}
+:root[data-theme="dark"] {
+  --glow-pct: 24%;
+}
+
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 900;
+  width: 440px;
+  height: 440px;
+  margin: -220px 0 0 -220px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--glow) var(--glow-pct), transparent) 0%,
+    transparent 65%
+  );
+  transform: translate3d(var(--mx, -999px), var(--my, -999px), 0);
+  opacity: 0;
+  transition: opacity 0.3s;
+  will-change: transform;
+}
+.cursor-glow.on {
+  opacity: 1;
+}
+
+/* garis grid menyala di sekitar kursor */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--glow) 55%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--glow) 55%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(
+    circle 190px at var(--mx, -999px) var(--my, -999px),
+    #000,
+    transparent
+  );
+  mask-image: radial-gradient(
+    circle 190px at var(--mx, -999px) var(--my, -999px),
+    #000,
+    transparent
+  );
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow,
+  body::after {
+    display: none;
+  }
+}

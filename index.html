@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Algorithm – Meet Our Team</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      /* pasang tema sebelum halaman tampil agar tidak berkedip */
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t)
+          t = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <nav class="navbar">
+      <a href="#home">Beranda</a>
+      <a href="#algoritma">Algoritma</a>
+      <a href="#anggota">Anggota</a>
+      <a href="#testimonial">Testimonial</a>
+      <button
+        class="theme-toggle"
+        id="themeBtn"
+        type="button"
+        aria-label="Ganti tema"
+      ></button>
+    </nav>
+
+    <header id="home" class="hero">
+      <p class="hero-sub">Meet Our Team</p>
+      <h1>Algorithm</h1>
+      <p class="hero-desc">
+        An algorithm is a series of logical, structured, and systematic steps or
+        procedures designed to solve a problem or achieve a specific goal.
+      </p>
+    </header>
+
+    <section id="algoritma" class="algo">
+      <h2>Apa itu Algoritma?</h2>
+      <div class="algo-wrap">
+        <div class="panel flow">
+          <svg
+            viewBox="0 0 300 395"
+            role="img"
+            aria-label="Flowchart menentukan angka genap atau ganjil"
+          >
+            <defs>
+              <marker
+                id="arr"
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="7"
+                markerHeight="7"
+                orient="auto-start-reverse"
+              >
+                <path d="M0 0L10 5L0 10z" fill="currentColor" />
+              </marker>
+            </defs>
+            <g class="shapes">
+              <rect x="100" y="10" width="100" height="36" rx="18" />
+              <polygon points="110,70 215,70 190,106 85,106" />
+              <polygon points="150,130 240,175 150,220 60,175" />
+              <rect x="10" y="250" width="100" height="36" rx="6" />
+              <rect x="190" y="250" width="100" height="36" rx="6" />
+              <rect x="100" y="344" width="100" height="36" rx="18" />
+            </g>
+            <g class="lines">
+              <path d="M150 46V68" marker-end="url(#arr)" />
+              <path d="M150 106V128" marker-end="url(#arr)" />
+              <path d="M60 175H60V248" marker-end="url(#arr)" />
+              <path d="M240 175V248" marker-end="url(#arr)" />
+              <path d="M60 286V320H150" />
+              <path d="M240 286V320H150" />
+              <path d="M150 320V342" marker-end="url(#arr)" />
+            </g>
+            <g class="labels" text-anchor="middle">
+              <text x="150" y="33">Mulai</text>
+              <text x="150" y="93">Input angka</text>
+              <text x="150" y="171">Habis dibagi</text>
+              <text x="150" y="185">2?</text>
+              <text x="60" y="273">Genap</text>
+              <text x="240" y="273">Ganjil</text>
+              <text x="150" y="367">Selesai</text>
+              <text x="38" y="166" class="yn">Ya</text>
+              <text x="262" y="166" class="yn">Tidak</text>
+            </g>
+          </svg>
+        </div>
+        <div class="panel about">
+          <h3>Langkah demi langkah untuk menyelesaikan masalah</h3>
+          <p>
+            Algoritma adalah urutan langkah yang jelas, logis, dan berurutan
+            untuk menyelesaikan suatu masalah atau mencapai tujuan tertentu.
+            Mirip resep masakan: ada bahan, cara memasak, dan hasil akhir.
+          </p>
+          <div class="chips">
+            <span>Input</span><i>&rarr;</i><span>Proses</span><i>&rarr;</i
+            ><span>Output</span>
+          </div>
+          <p class="note">
+            Flowchart di samping adalah contoh sederhana: menentukan sebuah
+            angka genap atau ganjil.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="anggota" class="team">
+      <h2>Let's Meet Our Team</h2>
+
+      <!-- Detail anggota (selalu terbuka, ganti otomatis) -->
+      <div id="detail" class="detail">
+        <div class="detail-photo" id="detailPhoto"></div>
+        <div class="detail-info">
+          <h3 id="detailName"></h3>
+          <p class="detail-role" id="detailRole"></p>
+          <h4>Biodata</h4>
+          <ul id="detailBio"></ul>
+          <div id="jobdesk" class="jobdesk">
+            <h4>Job Desk</h4>
+            <p class="jd-title" id="jdTitle"></p>
+            <p class="jd-desc" id="jdDesc"></p>
+            <p class="jd-sub">Yang dikerjakan</p>
+            <ul class="jd-grid" id="jdList"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="ctl" id="prevBtn" aria-label="Anggota sebelumnya">
+          &#8249;
+        </button>
+        <span id="counter">1 / 6</span>
+        <button class="ctl" id="playBtn" aria-label="Jeda">
+          &#10074;&#10074;
+        </button>
+        <button class="ctl" id="nextBtn" aria-label="Anggota berikutnya">
+          &#8250;
+        </button>
+      </div>
+
+      <div class="carousel" id="carousel">
+        <div class="track" id="track"></div>
+      </div>
+      <p class="hint">
+        Klik kartu foto atau gunakan tombol / panah keyboard untuk berpindah
+        anggota
+      </p>
+    </section>
+
+    <section id="testimonial" class="testi">
+      <h2>Testimonial</h2>
+      <p class="testi-sub">
+        Pesan dan kesan selama bootcamp dan pengerjaan proyek
+      </p>
+
+      <div class="rating-summary">
+        <span class="rating-big" id="ratingAvg">0.0</span>
+        <div>
+          <div class="stars" id="ratingStars"></div>
+          <small id="ratingCount"></small>
+        </div>
+      </div>
+
+      <div class="reviews" id="reviews"></div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Algorithm Team</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
