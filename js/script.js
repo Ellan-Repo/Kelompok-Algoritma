@@ -54,20 +54,17 @@ const members = [
     },
   },
   {
-    nama: "Anggota Empat",
-    role: "UI/UX Designer",
-    foto: "",
-    prodi: "S1 Desain Komunikasi Visual",
-    kampus: "Institut Desain Bali",
-    email: "empat@email.com",
+    nama: "Ni Putu Nadila Supardan",
+    role: "Copywriter",
+    foto: "asset/Nadila.jpeg",
+    prodi: "S1 Sistem Informasi",
+    kampus: "Universitas Pendidikan Ganesha",
+    email: "dilaa4la@gmail.com",
     jobdesk: {
       deskripsi:
-        "Merancang tampilan website agar konsisten, nyaman dilihat, dan mudah digunakan.",
+        "Menyusun teks yang ada di dalam website",
       tugas: [
-        "Membuat wireframe di Figma",
-        "Menentukan palet warna dan tipografi",
-        "Mendesain kartu anggota dan testimonial",
-        "Memeriksa konsistensi desain",
+        "Menyusun kalimat kesan dan pesan",
       ],
     },
   },
