@@ -39,20 +39,19 @@ const members = [
     },
   },
   {
-    nama: "Anggota Tiga",
-    role: "Backend Developer",
-    foto: "",
+    nama: "Tamita Brenia Berutu",
+    role: "Copywriter",
+    foto: "asset/Tamita.jpeg",
     prodi: "S1 Sistem Informasi",
-    kampus: "Universitas Udayana",
-    email: "tiga@email.com",
+    kampus: "Universitas Pendidikan Ganesha",
+    email: "tamitabreniaputri@gmail.com",
     jobdesk: {
       deskripsi:
-        "Menghidupkan halaman lewat JavaScript, mulai dari carousel anggota hingga tombol navigasi.",
+        "Membuat dan menyusun teks yang ada di dalam website",
       tugas: [
-        "Membuat carousel kartu anggota",
-        "Menambahkan auto-next dan tombol navigasi",
-        "Membuat fitur mode terang dan gelap",
-        "Merapikan struktur data anggota",
+        "Membuat kalimat penjelasan mengenai algoritma",
+        "Menyusun kalimat kesan dan pesan",
+    
       ],
     },
   },
@@ -114,46 +113,46 @@ const members = [
 
 const testimonials = [
   {
-    nama: "Anggota Satu",
+    nama: "Kiko",
     rating: 5,
-    tanggal: "2 minggu lalu",
+    tanggal: "1 minggu lalu",
     pesan:
       "Bootcamp ini mengajarkan cara bekerja dalam tim yang sesungguhnya. Pembagian tugas, review kode, sampai presentasi akhir, semuanya berkesan.",
   },
   {
-    nama: "Anggota Dua",
+    nama: "Ucup",
     rating: 5,
-    tanggal: "2 minggu lalu",
+    tanggal: "1 minggu lalu",
     pesan:
-      "Materinya runtut dan mentornya sabar. Proyek akhir membuat saya yakin menyusun antarmuka dari nol tanpa framework.",
+      "Saya senang bisa mengikuti kegiatan bootcamp selama dua hari karena mendapatkan banyak pengalaman baru.",
   },
   {
-    nama: "Anggota Tiga",
+    nama: "Cimit",
     rating: 4,
-    tanggal: "3 minggu lalu",
+    tanggal: "5 hari lalu",
     pesan:
-      "Tantangan terbesar adalah mengintegrasikan API dengan tampilan, tapi justru dari situ saya paling banyak belajar.",
+      "Membuat website menjadi pengalaman baru yang menyenangkan dan menambah pengetahuan saya tentang coding.",
   },
   {
-    nama: "Anggota Empat",
+    nama: "Nafa",
     rating: 5,
     tanggal: "1 bulan lalu",
     pesan:
-      "Kolaborasi desainer dan developer berjalan lancar. Saya belajar membuat desain yang benar-benar bisa dikerjakan.",
+      "Semoga ilmu yang didapat selama bootcamp bisa terus dikembangkan dan diterapkan ke depannya.",
   },
   {
-    nama: "Anggota Lima",
+    nama: "Ayu",
     rating: 4,
     tanggal: "1 bulan lalu",
     pesan:
       "Proyek berbasis data membuat saya paham alur kerja dari pengumpulan data sampai menjadi laporan yang berguna.",
   },
   {
-    nama: "Anggota Enam",
+    nama: "El",
     rating: 5,
     tanggal: "2 bulan lalu",
     pesan:
-      "Menjadi QA di tim kecil melatih ketelitian dan komunikasi. Tim yang solid membuat tiap sprint terasa menyenangkan.",
+      "Semoga kegiatan bootcamp seperti ini terus diadakan agar semakin banyak mahasiswa yang bisa belajar dan berkembang bersama.",
   },
 ];
 
