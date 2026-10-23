@@ -23,20 +23,18 @@ const members = [
     },
   },
   {
-    nama: "Anggota Dua",
-    role: "Frontend Developer",
-    foto: "",
+    nama: "Muhammad Maulana",
+    role: "Git Controller",
+    foto: "asset/Elan.jpeg",
     prodi: "S1 Ilmu Komputer",
-    kampus: "Politeknik Negeri Bali",
-    email: "dua@email.com",
+    kampus: "Universitas Pendidikan Ganesha",
+    email: "user0xaa55@gmail.com",
     jobdesk: {
       deskripsi:
-        "Membuat penjelasan algoritma beserta flowchart agar mudah dipahami pengunjung.",
+        "Membuat Repository dan Branch di GitHub.",
       tugas: [
-        "Membuat flowchart dengan SVG",
-        "Menulis penjelasan apa itu algoritma",
-        "Menyesuaikan tampilan di layar HP",
-        "Menguji tampilan di berbagai browser",
+        "Membuat Repository",
+        "Membuat Brach",
       ],
     },
   },
