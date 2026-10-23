@@ -69,12 +69,12 @@ const members = [
     },
   },
   {
-    nama: "Anggota Lima",
-    role: "Data Analyst",
-    foto: "",
-    prodi: "S1 Statistika",
+    nama: "Ayu Komang Mas Yunika",
+    role: "Copywriter",
+    foto: "asset/Yunika.jpeg",
+    prodi: "S1 Pendidikan Teknik Informatika",
     kampus: "Undiksha",
-    email: "lima@email.com",
+    email: "ayu.kmmasyunika24@email.com",
     jobdesk: {
       deskripsi:
         "Menyiapkan teks dan konten supaya pesan tim tersampaikan dengan jelas.",
