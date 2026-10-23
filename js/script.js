@@ -15,10 +15,8 @@ const members = [
       deskripsi:
         "Merancang kerangka halaman, menyusun navigasi, dan memastikan setiap bagian saling terhubung dengan baik.",
       tugas: [
-        "Membuat struktur HTML yang semantik",
-        "Menyusun navigasi dan hero section",
-        "Mengatur jadwal & pembagian tugas tim",
-        "Review akhir sebelum presentasi",
+        "Membuat struktur HTML yang semantik,CSS dan Javascript",
+        "Pembagian tugas tim",
       ],
     },
   },
@@ -91,68 +89,38 @@ const members = [
       ],
     },
   },
-  {
-    nama: "Anggota Enam",
-    role: "QA Engineer",
-    foto: "",
-    prodi: "S1 Teknik Informatika",
-    kampus: "Universitas Warmadewa",
-    email: "enam@email.com",
-    jobdesk: {
-      deskripsi:
-        "Memastikan seluruh fitur berjalan baik dan terdokumentasi rapi sebelum dipresentasikan.",
-      tugas: [
-        "Menguji semua fitur dan tautan",
-        "Mencatat dan melaporkan bug",
-        "Menulis dokumentasi proyek",
-        "Menyiapkan bahan presentasi",
-      ],
-    },
-  },
 ];
 
 const testimonials = [
   {
-    nama: "Kiko",
+    nama: "Nengah",
     rating: 5,
-    tanggal: "1 minggu lalu",
     pesan:
       "Bootcamp ini mengajarkan cara bekerja dalam tim yang sesungguhnya. Pembagian tugas, review kode, sampai presentasi akhir, semuanya berkesan.",
   },
   {
-    nama: "Ucup",
+    nama: "Elan",
     rating: 5,
-    tanggal: "1 minggu lalu",
     pesan:
       "Saya senang bisa mengikuti kegiatan bootcamp selama dua hari karena mendapatkan banyak pengalaman baru.",
   },
   {
     nama: "Cimit",
     rating: 4,
-    tanggal: "5 hari lalu",
     pesan:
       "Membuat website menjadi pengalaman baru yang menyenangkan dan menambah pengetahuan saya tentang coding.",
   },
   {
     nama: "Nafa",
     rating: 5,
-    tanggal: "1 bulan lalu",
     pesan:
       "Semoga ilmu yang didapat selama bootcamp bisa terus dikembangkan dan diterapkan ke depannya.",
   },
   {
     nama: "Ayu",
     rating: 4,
-    tanggal: "1 bulan lalu",
     pesan:
       "Proyek berbasis data membuat saya paham alur kerja dari pengumpulan data sampai menjadi laporan yang berguna.",
-  },
-  {
-    nama: "El",
-    rating: 5,
-    tanggal: "2 bulan lalu",
-    pesan:
-      "Semoga kegiatan bootcamp seperti ini terus diadakan agar semakin banyak mahasiswa yang bisa belajar dan berkembang bersama.",
   },
 ];
 
@@ -364,7 +332,7 @@ function renderTestimonials() {
           <div class="review-meta">Peserta bootcamp</div>
         </div>
       </div>
-      <div class="review-stars"><span class="stars">${starsHTML(t.rating)}</span>${t.tanggal}</div>
+      <div class="review-stars"><span class="stars">${starsHTML(t.rating)}</span></div>
       <p>${t.pesan}</p>
     </article>`,
     )
