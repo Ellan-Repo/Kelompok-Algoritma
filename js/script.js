@@ -103,7 +103,7 @@ const testimonials = [
   },
   {
     nama: "Cimit",
-    rating: 4,
+    rating: 5,
     pesan:
       "Membuat website menjadi pengalaman baru yang menyenangkan dan menambah pengetahuan saya tentang coding.",
   },
@@ -115,7 +115,7 @@ const testimonials = [
   },
   {
     nama: "Ayu",
-    rating: 4,
+    rating: 5,
     pesan:
       "Proyek berbasis data membuat saya paham alur kerja dari pengumpulan data sampai menjadi laporan yang berguna.",
   },
